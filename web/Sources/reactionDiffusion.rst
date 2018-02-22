@@ -7,7 +7,7 @@ Reaction diffusion systems
 Gray-Scott
 ----------
 
-Have a look at the `webgl demo <../grayscott/>`_
+Have a look at the `webgl demo <../../grayscott/>`_
 
 An earlier demo on `<https://github.com/jeremyfix/GrayScott>`_
 
