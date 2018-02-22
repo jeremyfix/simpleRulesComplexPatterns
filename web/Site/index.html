@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.13.1: http://docutils.sourceforge.net/" />
+<title>Simple rules and complex patterns</title>
+<meta content="Simple rules for complex patterns" name="description" />
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML"></script>
+<link rel="stylesheet" href="main.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="simple-rules-and-complex-patterns">
+<h1 class="title">Simple rules and complex patterns</h1>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Title:   Simple rules and complex patterns -->
+<!-- Author:  Jeremy Fix -->
+<!-- Date:    May 2017 -->
+<!-- License: GNU GPL v3 -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<p>I am fascinated by iterative systems that can, despite the simplicity of their definition (I agree this is not objective), engenders quite complex patterns. There are several such systems and I try to list and illustrate the ones I know about in this page. Some of these systems are related to understanding the climate (Lorentz attractor), the formation of patterns on the fur of animals (stripes, spots, ..), the apparent <a class="reference external" href="https://en.wikipedia.org/wiki/Flocking_(behavior)">coordinated behaviors of birds</a>, the patterns exhibited by chemical reactions (<a class="reference external" href="https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction">Belousov-Zhabotinsky reaction</a>), some others are, on first sight, pure mathematical constructions (Mandelbrot set, Julia set).</p>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<div class="contents main-content topic" id="table-of-content">
+<p class="topic-title first"><strong>Table of content</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#reaction-diffusion-systems" id="id13">1.&nbsp;&nbsp;&nbsp;Reaction diffusion systems</a></li>
+<li><a class="reference internal" href="#the-chaos-game" id="id14">2.&nbsp;&nbsp;&nbsp;The chaos game</a></li>
+<li><a class="reference internal" href="#mandelbrot-and-julia-sets" id="id15">3.&nbsp;&nbsp;&nbsp;Mandelbrot and julia sets</a></li>
+<li><a class="reference internal" href="#l-systems" id="id16">4.&nbsp;&nbsp;&nbsp;L-Systems</a></li>
+<li><a class="reference internal" href="#ressources" id="id17">5.&nbsp;&nbsp;&nbsp;Ressources</a></li>
+<li><a class="reference internal" href="#howto-une-petite-aide-sur-la-syntaxe-rest" id="id18">6.&nbsp;&nbsp;&nbsp;Howto : une petite aide sur la syntaxe Rest</a></li>
+</ul>
+</div>
+<p><strong>Forewords</strong>
+This page is written in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructured text</a> format and generated with the script <a class="reference external" href="http://docutils.sourceforge.net/tools/rst2html.py">rst2html.py</a> by David Googder using the <a class="reference external" href="http://docutils.sourceforge.net/">docutils</a> package. The stylesheet <a class="reference external" href="main.css">main.css</a> is adapted from the one used in the book <a class="reference external" href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">from python to numpy</a>.</p>
+<p>Latest revision - février 2018</p>
+<div class="section" id="reaction-diffusion-systems">
+<h1>1.&nbsp;&nbsp;&nbsp;Reaction diffusion systems</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first"><strong>Table of contents</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#gray-scott" id="id19">1.1.&nbsp;&nbsp;&nbsp;Gray-Scott</a></li>
+</ul>
+</div>
+<div class="section" id="gray-scott">
+<h2>1.1.&nbsp;&nbsp;&nbsp;Gray-Scott</h2>
+<p>Based on <a class="reference external" href="https://github.com/jeremyfix/GrayScott">https://github.com/jeremyfix/GrayScott</a></p>
+</div>
+</div>
+<div class="section" id="the-chaos-game">
+<h1>2.&nbsp;&nbsp;&nbsp;The chaos game</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<p>The chaos game was introduced by Michael Barnsley. It consists in repeatidly applying a function <span class="math">\(f\)</span> starting from a point <span class="math">\(x_0\)</span>. This leads to a sequence of points that can, eventually, produce a pattern. The function <span class="math">\(f\)</span> can comprise several deterministic rules that are selected randomly with fixed probabilities.</p>
+</div>
+<div class="section" id="mandelbrot-and-julia-sets">
+<h1>3.&nbsp;&nbsp;&nbsp;Mandelbrot and julia sets</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<div class="contents local topic" id="id4">
+<p class="topic-title first"><strong>Table of contents</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#mandelbrot-set" id="id20">3.1.&nbsp;&nbsp;&nbsp;Mandelbrot set</a></li>
+</ul>
+</div>
+<div class="section" id="mandelbrot-set">
+<h2>3.1.&nbsp;&nbsp;&nbsp;Mandelbrot set</h2>
+<p>The mandelbrot set is defined by the set of complex points <span class="math">\(c\)</span> such that the repeated application of the function <span class="math">\(z \mapsto z^2 + c\)</span> does not diverge. Let us take some examples. On the real axis,</p>
+<p>Based on <a class="reference external" href="https://github.com/jeremyfix/GrayScott">https://github.com/jeremyfix/GrayScott</a></p>
+</div>
+</div>
+<div class="section" id="l-systems">
+<h1>4.&nbsp;&nbsp;&nbsp;L-Systems</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<div class="contents local topic" id="id7">
+<p class="topic-title first"><strong>Table of contents</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#definition" id="id21">4.1.&nbsp;&nbsp;&nbsp;Definition</a></li>
+</ul>
+</div>
+<div class="section" id="definition">
+<h2>4.1.&nbsp;&nbsp;&nbsp;Definition</h2>
+<p>L-Systems are rewriting systems based on rules. These are symbolic systems, where you define a vocabulary, a set of rules, a stem and then iterate the rewritting rules. A rewritting rule is simply a rule which maps a set of symbols to another set of symbols. One can actually define simple rules that engender complex patterns.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://algorithmicbotany.org/papers/abop/abop.pdf">The algorithmic beauty of plants, Aristid Lindenmayer, Przemyslaw Prusinkiewicz</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ressources">
+<h1>5.&nbsp;&nbsp;&nbsp;Ressources</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<div class="contents local topic" id="id9">
+<p class="topic-title first"><strong>Table of contents</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#books" id="id22">5.1.&nbsp;&nbsp;&nbsp;Books</a></li>
+</ul>
+</div>
+<div class="section" id="books">
+<h2>5.1.&nbsp;&nbsp;&nbsp;Books</h2>
+<ul class="simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Chaos:_Making_a_New_Science">Chaos: Making a New Science, James Gleick</a></li>
+<li>Nonlinear dynamics and Chaos, Steven Strogatz</li>
+<li><a class="reference external" href="http://algorithmicbotany.org/papers/abop/abop.pdf">The algorithmic beauty of plants, Aristid Lindenmayer, Przemyslaw Prusinkiewicz</a></li>
+<li><a class="reference external" href="http://www.springer.com/us/book/9783540921417">The algorithmic beauty of sea shells, Hans Meinhardt</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="howto-une-petite-aide-sur-la-syntaxe-rest">
+<h1>6.&nbsp;&nbsp;&nbsp;Howto : une petite aide sur la syntaxe Rest</h1>
+<p><a class="reference external" href="index.html">Back to the top</a></p>
+<div class="contents local topic" id="id12">
+<p class="topic-title first"><strong>Table of contents</strong></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#code-python" id="id23">6.1.&nbsp;&nbsp;&nbsp;Code python</a></li>
+</ul>
+</div>
+<div class="section" id="code-python">
+<h2>6.1.&nbsp;&nbsp;&nbsp;Code python</h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">keras</span>
+
+<span class="keyword">def</span> <span class="name function">my_function</span><span class="punctuation">():</span>
+       <span class="literal string double">&quot;just a test&quot;</span>
+       <span class="keyword">print</span> <span class="literal number integer">8</span><span class="operator">/</span><span class="literal number integer">2</span><span class="name">x</span>
+<span class="keyword">while</span><span class="punctuation">(</span><span class="name builtin pseudo">True</span><span class="punctuation">):</span>
+       <span class="name">x</span> <span class="operator">=</span> <span class="name">x</span> <span class="operator">+</span> <span class="literal number integer">1</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
+</pre>
+<p>Ok</p>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">my_function2</span><span class="punctuation">():</span>
+       <span class="literal string double">&quot;just a test dlkdjqlkdsj&quot;</span>
+       <span class="keyword">print</span> <span class="literal number integer">8</span><span class="operator">/</span><span class="literal number integer">2</span><span class="name">x</span>
+</pre>
+<p>Below is an example of a math block</p>
+<div class="math">
+\begin{equation*}
+\xi = 2
+\end{equation*}
+</div>
+<div class="math">
+\begin{equation*}
+\hat{\xi} = \frac{1}{p}\sum_{i=1}^{n} \sum_{x_j \in C_i} \lVert
+ x_j-\mathbf{w}_i \rVert^2.
+\end{equation*}
+</div>
+<p>But you could also make use of inline math as in <span class="math">\(e^{i\pi} + 1 = 0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr class="footer" />
+Generated on: 2018-02-22.
+Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
+
+</div>
+</body>
+</html>

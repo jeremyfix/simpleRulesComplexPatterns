@@ -1,0 +1,42 @@
+
+body {
+    font-family:sans-serif;
+    background: rgb(44, 44, 55);
+    color:#777777;
+    margin: 0 auto;
+}
+
+
+#controls h1,h4 {
+  color:rgb(245, 122, 9);
+}
+
+.float {
+    display: inline-block;
+    margin: auto auto;
+}
+#simulation{
+  margin: 0 auto;
+  text-align:center;
+
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+}
+section {
+  float: left;
+  width: 63%;
+}
+aside {
+  float: right;
+  width: 30%;
+}

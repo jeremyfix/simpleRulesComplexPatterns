@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+  <link rel="stylesheet" type="text/css" href="css/stuff.css" />
+  <link rel="stylesheet" type="text/css" href="css/grapick.min.css" />
+  <title>Grayscott simulation</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+
+
+  <!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.0/dat.gui.min.js"></script>
+
+  -->
+  <script type="text/javascript" src="js3rd/jquery.min.js"></script>
+  <script type="text/javascript" src="js3rd/three.js"></script>
+  <script type="text/javascript" src="js3rd/dat.gui.min.js"></script>
+
+  <script src="js/grayscott.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var shaders = {
+					vshader: 'shaders/standardVertexShader.glsl',
+					initializationFragmentShader: 'shaders/initializationFragmentShader.glsl',
+					simulationFragmentShader: 'shaders/simulationFragmentShader.glsl',
+					renderingFragmentShader: 'shaders/renderingFragmentShader.glsl'
+				};
+        var simulation_size = {
+          width: 256,
+          height: 256
+        };
+        var render_size = {
+          width: 256,
+          height:  256
+        }
+      var simu = new Grayscott("container", "controls", simulation_size, render_size, shaders);
+
+    });
+
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <div class="group">
+    <section id="simulation"><canvas id="container"></canvas></section>
+    <aside id="controls">
+      <h1>Simulation controls</h1>
+    </aside>
+  </div>
+  See also : https://mrob.com/pub/comp/xmorphia/ogl/index.html
+</body>
+
+</html>
