@@ -1,5 +1,5 @@
 
-OUTPUT_DIR=../Site
+OUTPUT_DIR=../../docs
 SOURCES=$(wildcard *.rst)
 TARGETS=$(patsubst %.rst,$(OUTPUT_DIR)/%.html, $(SOURCES))
 STYLE=main.css
