@@ -27,21 +27,13 @@
   <script src="js/grayscott.js"></script>
   <script type="text/javascript">
     $(function() {
-      var shaders = {
-					vshader: 'shaders/standardVertexShader.glsl',
-					initializationFragmentShader: 'shaders/initializationFragmentShader.glsl',
-					simulationFragmentShader: 'shaders/simulationFragmentShader.glsl',
-					renderingFragmentShader: 'shaders/renderingFragmentShader.glsl'
-				};
+
         var simulation_size = {
           width: 256,
           height: 256
         };
-        var render_size = {
-          width: 256,
-          height:  256
-        }
-    var simu = new Grayscott("container", "controls", simulation_size, render_size, shaders);
+
+    var simu = new Grayscott("container", "controls", simulation_size);
 
     });
 

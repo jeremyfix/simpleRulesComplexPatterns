@@ -5,7 +5,7 @@ var hex_to_rgb = function(hex_value) {
 
 class ReactionDiffusion {
 
-    constructor(canvas_id, controls_id, simulation_size, render_size, shaders) {
+    constructor(canvas_id, controls_id, simulation_size, shaders) {
 
 	this.canvas = $("#" + canvas_id)[0];
 	this.controls_id = controls_id;
@@ -47,7 +47,7 @@ class ReactionDiffusion {
 	this.call_init = true;
 	this.start_pause = true;
 	this.is_fullscreen_mode = false;
-	this.render_size = render_size;
+	this.render_size = { width: 128, height: 128};
 
 	this.shaders = shaders;
 	this.gui_width = 300;
@@ -449,7 +449,7 @@ class ReactionDiffusion {
 	this.planeScreen.material = this.materials.renderingMaterial;
 	this.uniforms.tSource.value = this.front_buffer == 0 ? this.mTextureBuffer0 : this.mTextureBuffer1;
 	this.renderer.render(this.scene, this.camera, this.mTextureBuffer2);
-	
+
 	this.uniforms.tSource.value = this.mTextureBuffer2;
 	this.renderer.render(this.scene, this.camera);
     }
