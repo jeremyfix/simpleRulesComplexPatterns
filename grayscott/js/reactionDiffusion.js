@@ -105,6 +105,15 @@ class ReactionDiffusion {
 		wrapS: THREE.RepeatWrapping,
 		wrapT: THREE.RepeatWrapping
 	    });
+	this.mTextureBuffer2 = new THREE.WebGLRenderTarget(
+	    this.simulation_size.width, this.simulation_size.height, {
+		minFilter: THREE.LinearFilter,
+		magFilter: THREE.LinearFilter,
+		format: THREE.RGBAFormat,
+		type: THREE.FloatType,
+		wrapS: THREE.RepeatWrapping,
+		wrapT: THREE.RepeatWrapping
+	    });
 
 	this.uniforms = {
 	    time: {
@@ -439,6 +448,9 @@ class ReactionDiffusion {
 	// We always render the front buffer to the screen
 	this.planeScreen.material = this.materials.renderingMaterial;
 	this.uniforms.tSource.value = this.front_buffer == 0 ? this.mTextureBuffer0 : this.mTextureBuffer1;
+	this.renderer.render(this.scene, this.camera, this.mTextureBuffer2);
+	
+	this.uniforms.tSource.value = this.mTextureBuffer2;
 	this.renderer.render(this.scene, this.camera);
     }
 }
