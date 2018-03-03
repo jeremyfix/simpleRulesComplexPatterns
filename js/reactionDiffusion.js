@@ -64,16 +64,6 @@ class ReactionDiffusion {
   //////////////////////// Initialization functions //////////////////////////////
 
   init_textures() {
-    this.mTextureBufferRand = new THREE.WebGLRenderTarget(
-      this.simulation_size.width, this.simulation_size.height, {
-        minFilter: THREE.NearestFilter,
-        magFilter: THREE.NearestFilter,
-        format: THREE.RGBAFormat,
-        type: THREE.FloatType,
-        wrapS: THREE.RepeatWrapping,
-        wrapT: THREE.RepeatWrapping
-      });
-
     this.mTextureBuffer0 = new THREE.WebGLRenderTarget(
       this.simulation_size.width, this.simulation_size.height, {
         minFilter: THREE.NearestFilter,
@@ -109,10 +99,6 @@ class ReactionDiffusion {
       },
       source_channel_idx: {
         value: 1
-      },
-      tRandom: {
-        type: "t",
-        value: this.mTextureBufferRand
       },
       tSource: {
         type: "t",
@@ -174,10 +160,6 @@ class ReactionDiffusion {
     var shd_src = load_shader(this.shaders.vshader);
 
     this.materials = {
-      textMat: new THREE.MeshBasicMaterial({
-        color: 0xffff00,
-        side: THREE.DoubleSide
-      }),
       // Shaders used for initializing the front buffer
       initializationMaterial: new THREE.ShaderMaterial({
         uniforms: this.uniforms,

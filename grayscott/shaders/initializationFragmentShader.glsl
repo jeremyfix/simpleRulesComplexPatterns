@@ -7,6 +7,7 @@ uniform vec2 delta;
 // https://stackoverflow.com/questions/5149544/can-i-generate-a-random-number-inside-a-pixel-shaderhttps://stackoverflow.com/questions/5149544/can-i-generate-a-random-number-inside-a-pixel-shader
 // https://math.stackexchange.com/questions/337782/pseudo-random-number-generation-on-the-gpu
 // http://www.reedbeta.com/blog/quick-and-easy-gpu-random-numbers-in-d3d11/
+// https://developer.nvidia.com/gpugems/GPUGems3/gpugems3_ch37.html
 float random(vec2 p)
 {
   // We need irrationals for pseudo randomness.
