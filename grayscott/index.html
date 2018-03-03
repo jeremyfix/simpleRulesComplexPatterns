@@ -23,8 +23,8 @@
   <script type="text/javascript" src="js3rd/three.js"></script>
   <script type="text/javascript" src="js3rd/dat.gui.min.js"></script>
 
-  <script src="js/reactionDiffusion.js"></script>
-  <script src="js/grayscott.js"></script>
+  <script src="../js/reactionDiffusion.js"></script>
+  <script src="../js/grayscott.js"></script>
   <script type="text/javascript">
     $(function() {
 
@@ -34,7 +34,7 @@
         };
 
     var simu = new Grayscott("container", "controls", simulation_size);
-
+    simu.step(0);
     });
 
 
