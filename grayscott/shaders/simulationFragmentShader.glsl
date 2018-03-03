@@ -44,13 +44,14 @@ void main() {
 
     vec2 lapl_uv = laplacian(vUv);
     float uvv = uv.x * uv.y * uv.y;
-    float du = Du*lapl_uv.x - uvv + feed*(1.0 - uv.x);
-    float dv = Dv*lapl_uv.y + uvv - (feed+kill)*uv.y;
+    float du = Du*lapl_uv.x - uvv + feed*(1.0 - uv.x) - 0.1*coeff;
+    float dv = Dv*lapl_uv.y + uvv - (feed+kill)*uv.y + 0.1*coeff;
     new_uv = uv + dt * vec2(du, dv);
   }
   else {
     new_uv = uv;
   }
-  new_uv = (1.0 - coeff) * new_uv + coeff * vec2(0.0, 0.5);
+  //new_uv = (1.0 - coeff) * new_uv + coeff * vec2(0.0, 0.5);
+  //new_uv
   gl_FragColor = vec4(new_uv, 0.0, 0.0);
 }
