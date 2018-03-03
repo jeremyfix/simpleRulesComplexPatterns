@@ -20,35 +20,85 @@
 <!-- Date:    May 2017 -->
 <!-- License: GNU GPL v3 -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<p>I am fascinated by iterative systems that can, despite the simplicity of their definition (I agree this is not objective), engenders quite complex patterns. There are several such systems and I try to list and illustrate the ones I know about in this page. Some of these systems are related to understanding the climate (Lorentz attractor), the formation of patterns on the fur of animals (stripes, spots, ..), the apparent <a class="reference external" href="https://en.wikipedia.org/wiki/Flocking_(behavior)">coordinated behaviors of birds</a>, the patterns exhibited by chemical reactions (<a class="reference external" href="https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction">Belousov-Zhabotinsky reaction</a>), some others are, on first sight, pure mathematical constructions (Mandelbrot set, Julia set).</p>
+<p>It is fascinating how an iterative systems that can, despite the simplicity of their definition (I agree this is not objective), engenders quite complex patterns. There are several such systems and some of them are illustrated on this page. Some of these systems are related to understanding the climate (Lorentz attractor), the formation of patterns on the fur of animals (stripes, spots, ..), the apparent <a class="reference external" href="https://en.wikipedia.org/wiki/Flocking_(behavior)">coordinated behaviors of birds</a>, the patterns exhibited by chemical reactions (<a class="reference external" href="https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction">Belousov-Zhabotinsky reaction</a>), some others are, on first sight, pure mathematical constructions (Mandelbrot set, Julia set).</p>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <div class="contents main-content topic" id="table-of-content">
 <p class="topic-title first"><strong>Table of content</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#reaction-diffusion-systems" id="id13">1.&nbsp;&nbsp;&nbsp;Reaction diffusion systems</a></li>
-<li><a class="reference internal" href="#the-chaos-game" id="id14">2.&nbsp;&nbsp;&nbsp;The chaos game</a></li>
-<li><a class="reference internal" href="#mandelbrot-and-julia-sets" id="id15">3.&nbsp;&nbsp;&nbsp;Mandelbrot and julia sets</a></li>
-<li><a class="reference internal" href="#l-systems" id="id16">4.&nbsp;&nbsp;&nbsp;L-Systems</a></li>
-<li><a class="reference internal" href="#ressources" id="id17">5.&nbsp;&nbsp;&nbsp;Ressources</a></li>
-<li><a class="reference internal" href="#howto-une-petite-aide-sur-la-syntaxe-rest" id="id18">6.&nbsp;&nbsp;&nbsp;Howto : une petite aide sur la syntaxe Rest</a></li>
+<li><a class="reference internal" href="#reaction-diffusion-systems" id="id12">1.&nbsp;&nbsp;&nbsp;Reaction diffusion systems</a></li>
+<li><a class="reference internal" href="#the-chaos-game" id="id13">2.&nbsp;&nbsp;&nbsp;The chaos game</a></li>
+<li><a class="reference internal" href="#mandelbrot-and-julia-sets" id="id14">3.&nbsp;&nbsp;&nbsp;Mandelbrot and julia sets</a></li>
+<li><a class="reference internal" href="#l-systems" id="id15">4.&nbsp;&nbsp;&nbsp;L-Systems</a></li>
+<li><a class="reference internal" href="#ressources" id="id16">5.&nbsp;&nbsp;&nbsp;Ressources</a></li>
+<li><a class="reference internal" href="#howto-une-petite-aide-sur-la-syntaxe-rest" id="id17">6.&nbsp;&nbsp;&nbsp;Howto : une petite aide sur la syntaxe Rest</a></li>
 </ul>
 </div>
 <p><strong>Forewords</strong>
 This page is written in <a class="reference external" href="http://docutils.sourceforge.net/rst.html">restructured text</a> format and generated with the script <a class="reference external" href="http://docutils.sourceforge.net/tools/rst2html.py">rst2html.py</a> by David Googder using the <a class="reference external" href="http://docutils.sourceforge.net/">docutils</a> package. The stylesheet <a class="reference external" href="main.css">main.css</a> is adapted from the one used in the book <a class="reference external" href="http://www.labri.fr/perso/nrougier/from-python-to-numpy/">from python to numpy</a>.</p>
-<p>Latest revision - février 2018</p>
+<p>Latest revision - mars 2018</p>
 <div class="section" id="reaction-diffusion-systems">
 <h1>1.&nbsp;&nbsp;&nbsp;Reaction diffusion systems</h1>
 <p><a class="reference external" href="index.html">Back to the top</a></p>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title first"><strong>Table of contents</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#gray-scott" id="id19">1.1.&nbsp;&nbsp;&nbsp;Gray-Scott</a></li>
+<li><a class="reference internal" href="#gray-scott" id="id18">1.1.&nbsp;&nbsp;&nbsp;Gray-Scott</a></li>
 </ul>
 </div>
 <div class="section" id="gray-scott">
 <h2>1.1.&nbsp;&nbsp;&nbsp;Gray-Scott</h2>
-<p>Have a look at the <a class="reference external" href="../../grayscott/">webgl demo</a></p>
-<p>An earlier demo on <a class="reference external" href="https://github.com/jeremyfix/GrayScott">https://github.com/jeremyfix/GrayScott</a></p>
+<p>The Gray-Scott reaction diffusion system consists in two layers of reactants whose concentrations <span class="math">\(u(x,t)\)</span>, <span class="math">\(v(x,t)\)</span>, with <span class="math">\(x\)</span> a 2D position on a regular lattice, follow the differential equation :</p>
+<div class="math">
+\begin{align*}
+\frac{\partial u}{dt}(x,t) = D_u \nabla^2 u - u v^2 + f \dot (1 - u)\\
+\frac{\partial v}{dt}(x,t) = D_v \nabla^2 v + u v^2 - (f + k) v
+\end{align*}
+</div>
+<p>Depending on the values of the feed <span class="math">\(f\)</span> and kill <span class="math">\(k\)</span> parameters, this system exhibits the formation of patterns such as the one depicted below.</p>
+<div class="figure">
+<img alt="Figs/grayscott.png" class="bordered" src="Figs/grayscott.png" style="width: 100%;" />
+</div>
+<p>The above pictures have been generated with the following settings :</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="28%" />
+<col width="29%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Du <span class="math">\((10^{-5})\)</span></th>
+<th class="head">Dv  <span class="math">\((10^{-5})\)</span></th>
+<th class="head">f</th>
+<th class="head">k</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Worms</td>
+<td><span class="math">\(2.2\)</span></td>
+<td><span class="math">\(0.9\)</span></td>
+<td>0.046</td>
+<td>0.063</td>
+</tr>
+<tr><td>Solitons</td>
+<td><span class="math">\(2.2\)</span></td>
+<td><span class="math">\(0.9\)</span></td>
+<td>0.03</td>
+<td>0.062</td>
+</tr>
+<tr><td>Waves</td>
+<td><span class="math">\(2.2\)</span></td>
+<td><span class="math">\(0.9\)</span></td>
+<td>0.014</td>
+<td>0.045</td>
+</tr>
+</tbody>
+</table>
+<p>The integration of the equation was performed with forward Euler with <span class="math">\(\Delta t = 1.0\)</span>.</p>
+<p>If you want to play with the system, test the <a class="reference external" href="../../grayscott/index.html">webgl demo</a>.</p>
+<!-- An earlier demo on `<https://github.com/jeremyfix/GrayScott>`_ -->
 </div>
 </div>
 <div class="section" id="the-chaos-game">
@@ -62,7 +112,7 @@ This page is written in <a class="reference external" href="http://docutils.sour
 <div class="contents local topic" id="id4">
 <p class="topic-title first"><strong>Table of contents</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#mandelbrot-set" id="id20">3.1.&nbsp;&nbsp;&nbsp;Mandelbrot set</a></li>
+<li><a class="reference internal" href="#mandelbrot-set" id="id19">3.1.&nbsp;&nbsp;&nbsp;Mandelbrot set</a></li>
 </ul>
 </div>
 <div class="section" id="mandelbrot-set">
@@ -74,10 +124,10 @@ This page is written in <a class="reference external" href="http://docutils.sour
 <div class="section" id="l-systems">
 <h1>4.&nbsp;&nbsp;&nbsp;L-Systems</h1>
 <p><a class="reference external" href="index.html">Back to the top</a></p>
-<div class="contents local topic" id="id7">
+<div class="contents local topic" id="id6">
 <p class="topic-title first"><strong>Table of contents</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#definition" id="id21">4.1.&nbsp;&nbsp;&nbsp;Definition</a></li>
+<li><a class="reference internal" href="#definition" id="id20">4.1.&nbsp;&nbsp;&nbsp;Definition</a></li>
 </ul>
 </div>
 <div class="section" id="definition">
@@ -91,10 +141,10 @@ This page is written in <a class="reference external" href="http://docutils.sour
 <div class="section" id="ressources">
 <h1>5.&nbsp;&nbsp;&nbsp;Ressources</h1>
 <p><a class="reference external" href="index.html">Back to the top</a></p>
-<div class="contents local topic" id="id9">
+<div class="contents local topic" id="id8">
 <p class="topic-title first"><strong>Table of contents</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#books" id="id22">5.1.&nbsp;&nbsp;&nbsp;Books</a></li>
+<li><a class="reference internal" href="#books" id="id21">5.1.&nbsp;&nbsp;&nbsp;Books</a></li>
 </ul>
 </div>
 <div class="section" id="books">
@@ -110,10 +160,10 @@ This page is written in <a class="reference external" href="http://docutils.sour
 <div class="section" id="howto-une-petite-aide-sur-la-syntaxe-rest">
 <h1>6.&nbsp;&nbsp;&nbsp;Howto : une petite aide sur la syntaxe Rest</h1>
 <p><a class="reference external" href="index.html">Back to the top</a></p>
-<div class="contents local topic" id="id12">
+<div class="contents local topic" id="id11">
 <p class="topic-title first"><strong>Table of contents</strong></p>
 <ul class="auto-toc simple">
-<li><a class="reference internal" href="#code-python" id="id23">6.1.&nbsp;&nbsp;&nbsp;Code python</a></li>
+<li><a class="reference internal" href="#code-python" id="id22">6.1.&nbsp;&nbsp;&nbsp;Code python</a></li>
 </ul>
 </div>
 <div class="section" id="code-python">
@@ -152,7 +202,7 @@ This page is written in <a class="reference external" href="http://docutils.sour
 </div>
 <div class="footer">
 <hr class="footer" />
-Generated on: 2018-02-22.
+Generated on: 2018-03-03.
 Generated by <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> from <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> source.
 
 </div>

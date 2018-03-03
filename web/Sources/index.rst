@@ -11,14 +11,13 @@
 
 .. |date| date::  %B %Y
 
-		  
+
 ===============================================================================
-                    Simple rules and complex patterns                          
+                    Simple rules and complex patterns
 ===============================================================================
 
 
-
-I am fascinated by iterative systems that can, despite the simplicity of their definition (I agree this is not objective), engenders quite complex patterns. There are several such systems and I try to list and illustrate the ones I know about in this page. Some of these systems are related to understanding the climate (Lorentz attractor), the formation of patterns on the fur of animals (stripes, spots, ..), the apparent `coordinated behaviors of birds <https://en.wikipedia.org/wiki/Flocking_(behavior)>`_, the patterns exhibited by chemical reactions (`Belousov-Zhabotinsky reaction <https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction>`_), some others are, on first sight, pure mathematical constructions (Mandelbrot set, Julia set).
+It is fascinating how an iterative systems that can, despite the simplicity of their definition (I agree this is not objective), engenders quite complex patterns. There are several such systems and some of them are illustrated on this page. Some of these systems are related to understanding the climate (Lorentz attractor), the formation of patterns on the fur of animals (stripes, spots, ..), the apparent `coordinated behaviors of birds <https://en.wikipedia.org/wiki/Flocking_(behavior)>`_, the patterns exhibited by chemical reactions (`Belousov-Zhabotinsky reaction <https://en.wikipedia.org/wiki/Belousov%E2%80%93Zhabotinsky_reaction>`_), some others are, on first sight, pure mathematical constructions (Mandelbrot set, Julia set).
 
 
 .. ----------------------------------------------------------------------------
@@ -51,5 +50,4 @@ Latest revision - |date|
 .. include:: mandelbrot.rst
 .. include:: lsystems.rst
 .. include:: additional_ressources.rst
-.. include:: howto.rst		  
-
+.. include:: howto.rst
