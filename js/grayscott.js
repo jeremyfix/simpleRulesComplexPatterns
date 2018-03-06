@@ -1,5 +1,5 @@
 class Grayscott extends ReactionDiffusion {
-  constructor(canvas_id, controls_id, simulation_size) {
+  constructor(canvas_id, controls_id, simulation_size, interpolate) {
 
     var shaders = {
       vshader: 'shaders/standardVertexShader.glsl',
@@ -8,7 +8,7 @@ class Grayscott extends ReactionDiffusion {
       renderingFragmentShader: 'shaders/renderingFragmentShader.glsl'
     };
 
-    super(canvas_id, controls_id, simulation_size, shaders);
+    super(canvas_id, controls_id, simulation_size, shaders, interpolate);
 
 
     this.presets = {

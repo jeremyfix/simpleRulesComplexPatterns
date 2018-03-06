@@ -4,7 +4,7 @@
 <head>
   <meta charset=utf-8>
   <link rel="stylesheet" type="text/css" href="../css/stuff.css" />
-  <title>Grayscott simulation</title>
+  <title>Ising simulation</title>
   <style>
     body {
       margin: 0;
@@ -23,7 +23,7 @@
   <script type="text/javascript" src="../js3rd/dat.gui.min.js"></script>
 
   <script src="../js/reactionDiffusion.js"></script>
-  <script src="../js/grayscott.js"></script>
+  <script src="../js/ising.js"></script>
   <script type="text/javascript">
     $(function() {
 
@@ -32,7 +32,7 @@
           height: 256
         };
 
-    var simu = new Grayscott("container", "controls", simulation_size, true);
+    var simu = new Ising("container", "controls", simulation_size, false);
     simu.step(0);
     });
 
@@ -50,7 +50,6 @@
       <h1>Simulation controls</h1>
     </aside>
   </div>
-  See also : https://mrob.com/pub/comp/xmorphia/ogl/index.html
 </body>
 
 </html>

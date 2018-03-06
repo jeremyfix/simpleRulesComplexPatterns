@@ -5,7 +5,7 @@ var hex_to_rgb = function(hex_value) {
 
 class ReactionDiffusion {
 
-  constructor(canvas_id, controls_id, simulation_size, shaders) {
+  constructor(canvas_id, controls_id, simulation_size, shaders, interpolate) {
 
     this.canvas = $("#" + canvas_id)[0];
     this.controls_id = controls_id;
@@ -45,6 +45,8 @@ class ReactionDiffusion {
         color: 0xEC38BC
       }
     ];
+
+    this.interpolate = interpolate;
 
     this.init_textures();
     this.init_materials();
@@ -262,6 +264,7 @@ class ReactionDiffusion {
     this.gui.add(buttons, 'fullscreen').name("Fullscreen");
     this.gui.add(buttons, 'screenshot').name("Take screenshot");
 
+    this.gui.add(this, 'interpolate');
 
     var fgradient = this.gui.addFolder('Gradient');
     for (var idx in this.gradient) {
@@ -398,15 +401,20 @@ class ReactionDiffusion {
 
     this.iteration += 1;
   }
-
-  render_display() {
+render_display() {
     // We always render the front buffer to the screen
     this.planeScreen.material = this.materials.renderingMaterial;
 
-    this.uniforms.tSource.value = this.front_buffer == 0 ? this.mTextureBuffer0 : this.mTextureBuffer1;
-    this.renderer.render(this.scene, this.camera, this.mTextureBuffer2);
+    if (this.interpolate) {
+      this.uniforms.tSource.value = this.front_buffer == 0 ? this.mTextureBuffer0 : this.mTextureBuffer1;
+      this.renderer.render(this.scene, this.camera, this.mTextureBuffer2);
 
-    this.uniforms.tSource.value = this.mTextureBuffer2;
-    this.renderer.render(this.scene, this.camera);
+      this.uniforms.tSource.value = this.mTextureBuffer2;
+      this.renderer.render(this.scene, this.camera);
+    } else {
+
+      this.uniforms.tSource.value = this.front_buffer == 0 ? this.mTextureBuffer0 : this.mTextureBuffer1;
+      this.renderer.render(this.scene, this.camera);
+    }
   }
 }
