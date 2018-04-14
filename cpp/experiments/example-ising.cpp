@@ -1,0 +1,39 @@
+#include "simplerules.hpp"
+
+#include <memory>
+
+using namespace std::placeholders;
+#define WIDTH 100
+#define HEIGHT 100
+
+int main(int argc, char* argv[]) {
+  
+   std::random_device rd;
+   std::mt19937 gen(rd());
+   
+  using Model = simplerules::reactiondiffusion::Ising<WIDTH, HEIGHT>;
+  Model model(0.5);
+  model.init(gen);
+   
+  ccmpl::Main m(argc,argv,"view-ising");
+  
+  auto display = ccmpl::layout(4.0, 4.0, {"#"});
+  display.set_ratios({1.},{1.});
+  
+  display().title = "Ising";
+  display() = {-1., 1., -1., 1.};
+  display() = "equal";
+  display() += ccmpl::image("cmap='binary', interpolation='nearest', clim=(0,1)", std::bind(&Model::fill_data, std::cref(model), _1, _2, _3, _4, _5));
+
+  m.generate(display, true);
+  
+  while(true) {
+    model.step(gen);
+
+    std::cout << display("#", ccmpl::nofile(), ccmpl::nofile());
+  }
+
+  std::cout << ccmpl::stop;
+
+  return 0;
+}
