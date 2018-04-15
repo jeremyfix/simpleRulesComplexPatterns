@@ -3,8 +3,8 @@
 #include <memory>
 
 using namespace std::placeholders;
-#define WIDTH 100
-#define HEIGHT 100
+#define WIDTH 200
+#define HEIGHT 200
 
 int main(int argc, char* argv[]) {
   
@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
    std::mt19937 gen(rd());
    
   using Model = simplerules::reactiondiffusion::Ising<WIDTH, HEIGHT>;
-  Model model(0.5);
+  Model model(1.0);
   model.init(gen);
    
   ccmpl::Main m(argc,argv,"view-ising");

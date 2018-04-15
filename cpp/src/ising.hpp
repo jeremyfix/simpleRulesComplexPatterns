@@ -45,29 +45,27 @@ namespace simplerules {
       
       double sum_neighbors(unsigned int i, unsigned int j) {
 	// We sum  North + EAST + SOUTH + WEST
-	
-
 	if(i == 0) {
 	  if (j == 0) // Corner TL
-	    return get_spin(HEIGHT-1,0) + get_spin(0,1) + get_spin(1,0) + get_spin(0,WIDTH-1);
+	    return get_spin(HEIGHT-1, j) + get_spin(i,j+1) + get_spin(i+1,j) + get_spin(i,WIDTH-1);
 	  else if(j == WIDTH-1) // Corner TR
-	    return get_spin(HEIGHT-1,WIDTH-1) + get_spin(0,0) + get_spin(1,WIDTH-1) + get_spin(0,WIDTH-2);
+	    return get_spin(HEIGHT-1,j) + get_spin(i,0) + get_spin(i+1,j) + get_spin(i,j-1);
 	  else // top row
-	    return get_spin(HEIGHT-1, j) + get_spin(i,j+1) + get_spin(1,j) + get_spin(i,j-1);
+	    return get_spin(HEIGHT-1, j) + get_spin(i,j+1) + get_spin(i+1,j) + get_spin(i,j-1);
 	}
 	else if(i == HEIGHT - 1) {
 	  if (j == 0) // Corner BL
-	    return get_spin(HEIGHT-2,0) + get_spin(HEIGHT-1,1) + get_spin(0,0) + get_spin(HEIGHT-1,WIDTH-1);
+	    return get_spin(i-1,j) + get_spin(i,j+1) + get_spin(0,j) + get_spin(i,WIDTH-1);
 	  else if(j == WIDTH-1) // Corner BR
-	    return 0;
+	    return get_spin(i-1,j) + get_spin(i,0) + get_spin(0,j) + get_spin(i,j-1);
 	  else // Bottom row
-	    return 0;
+	    return get_spin(i-1,j) + get_spin(i,j+1) + get_spin(0,j) + get_spin(i,j-1);
 	}
 	else {
 	  if (j == 0) // Left border
-	    return 0;
+	    return get_spin(i-1,j) + get_spin(i,j+1) + get_spin(i+1,j) + get_spin(i,WIDTH-1);
 	  else if(j == WIDTH-1) // Right border
-	    return 0;
+	    return get_spin(i-1,j) + get_spin(i,0) + get_spin(i+1,j) + get_spin(i,j-1);
 	  else
 	    return get_spin(i-1,j) + get_spin(i,j+1) + get_spin(i+1,j) + get_spin(i,j-1);
 	}
