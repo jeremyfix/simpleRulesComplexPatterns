@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
    std::mt19937 gen(rd());
    
   using Model = simplerules::reactiondiffusion::Ising<WIDTH, HEIGHT>;
-  Model model(1.0);
+  Model model(0.5);
   model.init(gen);
    
   ccmpl::Main m(argc,argv,"view-ising");

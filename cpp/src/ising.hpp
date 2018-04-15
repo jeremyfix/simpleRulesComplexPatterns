@@ -34,9 +34,7 @@ namespace simplerules {
 	for(auto& si: _state) {
 	  for(auto& sij: si)
 	    sij = (bool)(distrib(gen) > 0.5);
-	}
-
-	
+	}	
       }
 
       double get_spin(unsigned int i, unsigned int j) const {
@@ -69,7 +67,6 @@ namespace simplerules {
 	  else
 	    return get_spin(i-1,j) + get_spin(i,j+1) + get_spin(i+1,j) + get_spin(i,j-1);
 	}
-	return 0;
       }
 
       
