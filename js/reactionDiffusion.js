@@ -258,7 +258,8 @@ class ReactionDiffusion {
       screenshot: this.on_screenshot.bind(this),
       toggle: this.on_toggle.bind(this)
     };
-    this.gui.add(buttons, 'start_pause').name("Start/Pause");
+    this.start_pause_button = this.gui.add(buttons, 'start_pause');
+    this.start_pause_button.name("Pause");
     this.gui.add(buttons, 'reset').name("Reset");
     this.gui.add(buttons, 'toggle').name("Show other");
     this.gui.add(buttons, 'fullscreen').name("Fullscreen");
@@ -287,6 +288,12 @@ class ReactionDiffusion {
   on_start_pause() {
     this.start_pause = !this.start_pause;
     this.uniforms.running.value = this.start_pause;
+    if(this.start_pause) {
+      this.start_pause_button.name("Pause");
+    }
+    else {
+      this.start_pause_button.name("Start");
+    }
   }
 
   on_reset() {

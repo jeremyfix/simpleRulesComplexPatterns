@@ -37,6 +37,24 @@ void main() {
   else if(source_channel_idx == 2) {
     potential_value = value.z;
   }
-
   gl_FragColor = vec4(get_color_of_value(potential_value), 1.0);
+  /*
+  vec3 color;
+  if(vUv.x <= 0.0) {
+    color.x = 0.0;
+    color.y = 1.0;
+    color.z = 0.0;
+  }
+  else if(vUv.x <= 1.0) {
+    color.x = vUv.x;
+    color.y = 0.0;
+    color.z = 0.0;
+  }
+  else {
+    color.x = 0.0;
+    color.y = 0.0;
+    color.z = 1.0;
+  }
+  gl_FragColor = vec4(color, 1.0);
+*/
 }

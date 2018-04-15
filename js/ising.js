@@ -17,7 +17,7 @@ class Ising extends ReactionDiffusion {
 
     this.uniforms.source_channel_idx.value = 0;
 
-    this.gui.add(this.uniforms.temperature, 'value', 0, 0.2);
+    this.gui.add(this.uniforms.temperature, 'value', 0, 1000.0);
 
   }
 }
