@@ -4,6 +4,8 @@ uniform float time;
 uniform int source_channel_idx;
 uniform sampler2D tSource;
 uniform vec2 delta;
+
+
 // https://stackoverflow.com/questions/5149544/can-i-generate-a-random-number-inside-a-pixel-shaderhttps://stackoverflow.com/questions/5149544/can-i-generate-a-random-number-inside-a-pixel-shader
 // https://math.stackexchange.com/questions/337782/pseudo-random-number-generation-on-the-gpu
 // http://www.reedbeta.com/blog/quick-and-easy-gpu-random-numbers-in-d3d11/
@@ -25,14 +27,15 @@ float rand(vec2 co)
     highp float a = 12.9898;
     highp float b = 78.233;
     highp float c = 43758.5453;
-    highp float dt= dot(co.xy ,vec2(a,b));
+    highp float dt= dot(co.xy +time,vec2(a,b));
     highp float sn= mod(dt,3.14);
-    return fract(sin(sn) * c * time);
+    return fract(sin(sn) * c);
 }
 
 void main()
 {
-    bool state = rand2(vUv) > 0.5;
+    bool state = rand(vUv) > 0.5;
+    //bool state = gold_noise(vUv) > 0.5;
 
     gl_FragColor = vec4(state, 0.0, 0.0, 0.0);
 }

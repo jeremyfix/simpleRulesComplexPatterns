@@ -82,13 +82,15 @@ namespace simplerules {
 	  for(auto& sij: si) {
 	    // We compute the variation of the energy
 	    // caused by flipping this unit
+	    if(distrib(gen) > 0.5) {
 	    dE = 2.0 * get_spin(i, j) * sum_neighbors(i, j);
 	    if(dE < 0.0) // unconditionnaly flip the spin
 	      sij = !sij;
 	    else {
 	      pflip = exp(-_temperature * dE);
 	      if(distrib(gen) < pflip)
-		sij = !sij;
+	      	sij = !sij;
+	    }
 	    }
 	    ++j;
 	  }
