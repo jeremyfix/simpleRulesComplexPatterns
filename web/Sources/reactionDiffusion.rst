@@ -35,6 +35,6 @@ Waves         `2.2`               `0.9`                0.014    0.045
 
 The integration of the equation was performed with forward Euler with `\Delta t = 1.0`.
 
-If you want to play with the system, test the `webgl demo <../../grayscott/index.html>`_.
+If you want to play with the system, test the `webgl demo <../../webgl/grayscott/index.html>`_.
 
 .. An earlier demo on `<https://github.com/jeremyfix/GrayScott>`_
