@@ -17,3 +17,5 @@ See :
 - A. W. Liehr: Dissipative Solitons in Reaction Diffusion Systems. Mechanism, Dynamics, Interaction. Volume 70 of Springer Series in Synergetics, Springer, Berlin Heidelberg 2013, ISBN 978-3-642-31250-2
 - Gene Regulatory Networks ?
 - some works of Nicolas Rachevsky 2 factor ? 
+- the algorithmic beauty of plants ?
+- simulation of the physarum polycephalum ?  https://www.sciencedirect.com/science/article/pii/S002251930600289X
